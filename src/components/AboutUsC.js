@@ -63,7 +63,7 @@ function AboutUsC() {
           height: "100%",
         }}>
         <p style={{ fontSize: 20, color: colors.rd, fontWeight: 500 }}>
-          What is JINA-COVID-19
+          What is COVID-19
         </p>
         <p style={{ fontSize: 30, color: colors.gr, fontWeight: 700 }}>
           Coronavirus

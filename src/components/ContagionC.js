@@ -54,7 +54,7 @@ function ContagionC() {
           textAlign: "center",
         }}>
         <p style={{ fontSize: 15, color: colors.rd, fontWeight: 700 }}>
-          JINA-COVID-19
+          COVID-19
         </p>
         <p style={{ fontSize: 30, color: colors.gr, fontWeight: 700 }}>
           Contagion

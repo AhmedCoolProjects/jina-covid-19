@@ -168,7 +168,7 @@ function StartC() {
             height: "100%",
           }}>
           <p style={{ fontSize: 25, color: colors.rd, fontWeight: 500 }}>
-            JINA-COVID-19 Alert
+            COVID-19 Alert
           </p>
           <p style={{ fontSize: 35, color: colors.gr, fontWeight: 700 }}>
             Stay at Home quarantine

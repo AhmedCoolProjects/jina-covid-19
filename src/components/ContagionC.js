@@ -6,7 +6,7 @@ import il1 from "../assets/Illustration3.svg";
 import il2 from "../assets/Illustration4.svg";
 import il3 from "../assets/Illustration5.svg";
 import p11 from "../assets/coronapp2.svg";
-
+// data to map later
 const gridItems = [
   {
     title: "Air Transmission",
@@ -37,10 +37,8 @@ function ContagionC() {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        height: 520,
         position: "relative",
         alignItems: "center",
-        justifyContent: "space-between",
       }}>
       {/* top */}
       <div
@@ -66,7 +64,6 @@ function ContagionC() {
           some cause disease. A newly identified type
         </p>
       </div>
-
       {/* grid */}
       <Container style={{ position: "relative" }} maxWidth="md">
         <img
@@ -81,7 +78,7 @@ function ContagionC() {
           }}
           alt="p11"
         />
-        <Grid container spacing={3}>
+        <Grid container style={{ marginBottom: 20 }} spacing={3}>
           {gridItems.map((gItem, index) => (
             <ContagionCardC
               key={index}

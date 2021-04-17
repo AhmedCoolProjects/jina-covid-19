@@ -13,17 +13,8 @@ function FooterC() {
         marginBottom: 32,
       }}
       maxWidth="md">
-      <img
-        src={logo}
-        alt="logo"
-        style={{
-          height: 50,
-          objectFit: "contain",
-          position: "absolute",
-          left: 0,
-          top: 0,
-        }}
-      />
+      <img src={logo} alt="logo" className="footer_logo2" />
+      <img src={logo} alt="logo" className="footer_logo" />
       <div
         style={{
           height: 50,
@@ -61,6 +52,7 @@ function FooterC() {
         </Button>
       </div>
       {/* links */}
+
       <Typography
         style={{ marginTop: 32 }}
         variant="body2"

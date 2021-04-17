@@ -6,3 +6,36 @@
     #b57474 45.66%
   );
 } */
+.app {
+  overflow: hidden;
+}
+.symptompsc_big_img {
+  position: relative;
+  height: 100%;
+  width: 90%;
+}
+.footer_logo {
+  height: 50px;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.footer_logo2 {
+  height: 50px;
+  object-fit: contain;
+  position: relative;
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .symptompsc_big_img {
+    width: 100%;
+  }
+  .footer_logo {
+    display: none;
+  }
+  .footer_logo2 {
+    display: block;
+  }
+}

@@ -1,10 +1,26 @@
 import React from "react";
-import p2 from "../assets/Illustration2.svg";
+import leftImage from "../assets/Illustration2.svg";
 import { colors } from "./ColorsD";
 import p3 from "../assets/coronapp1.svg";
 import p4 from "../assets/coronapp2.svg";
-import { Button } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
+
+const useStyle = makeStyles((theme) => ({
+  leftImg: {
+    height: "100%",
+    objectFit: "contain",
+    position: "absolute",
+    left: 0,
+    top: 0,
+    opacity: 1,
+    [theme.breakpoints.down("md")]: {
+      opacity: 0.5,
+    },
+  },
+}));
+
 function AboutUsC() {
+  const classes = useStyle();
   return (
     <div
       style={{
@@ -13,7 +29,7 @@ function AboutUsC() {
         paddingRight: "5%",
         display: "flex",
         flexDirection: "row",
-        height: "80vh",
+        height: 500,
         position: "relative",
         alignItems: "center",
         justifyContent: "flex-end",
@@ -41,17 +57,7 @@ function AboutUsC() {
         alt="p2"
       />
       {/* left */}
-      <img
-        src={p2}
-        style={{
-          height: "100%",
-          objectFit: "contain",
-          position: "absolute",
-          left: 0,
-          top: 0,
-        }}
-        alt="p2"
-      />
+      <img src={leftImage} className={classes.leftImg} alt="leftImg" />
       {/* right */}
       <div
         style={{

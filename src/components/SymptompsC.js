@@ -1,4 +1,3 @@
-import { Container } from "@material-ui/core";
 import React from "react";
 import { colors } from "./ColorsD";
 import il6 from "../assets/Illustration6.svg";
@@ -39,7 +38,9 @@ function SymptompsC() {
           recent outbreak of respiratory
         </p>
       </div>
-      <div style={{ position: "relative", height: "100%", width: "90%" }}>
+
+      {/* BigImage */}
+      <div className="symptompsc_big_img">
         <img
           src={il6}
           style={{
@@ -47,7 +48,7 @@ function SymptompsC() {
             objectFit: "contain",
             position: "relative",
           }}
-          alt="SymptompsC"
+          alt="SymptompsCBigImg"
         />
       </div>
     </div>

@@ -5,23 +5,15 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import logo from "../assets/Logo.svg";
-import { Button, Grid, Paper } from "@material-ui/core";
-import p1 from "../assets/Illustration1.svg";
+import { Button, Paper } from "@material-ui/core";
+import bigPicture from "../assets/Illustration1.svg";
 import { colors } from "./ColorsD";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  logo: {
-    height: 50,
-    objectFit: "contain",
   },
   sectionDesktop: {
     display: "none",
@@ -35,52 +27,52 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  bigPic: {
+    height: "100%",
+    objectFit: "contain",
+    position: "absolute",
+    right: 0,
+    top: 0,
+    opacity: 1,
+    [theme.breakpoints.down("md")]: {
+      opacity: 0.5,
+    },
+  },
 }));
 function StartC() {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+  // close in mobile mode
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
-
+  // open event for mobile mode
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
+  // the menu in modile mode
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
       keepMounted
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}>
-      <MenuItem>
-        <p style={{ fontSize: 15, color: colors.rd, fontWeight: 500 }}>
-          Overview
-        </p>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <p style={{ fontSize: 15, fontWeight: 500 }}>Overview</p>
       </MenuItem>
-      <MenuItem>
-        <p style={{ fontSize: 15, color: colors.rd, fontWeight: 500 }}>
-          Contagion
-        </p>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <p style={{ fontSize: 15, fontWeight: 500 }}>Contagion</p>
       </MenuItem>
-      <MenuItem>
-        <p style={{ fontSize: 15, color: colors.rd, fontWeight: 500 }}>
-          Symptomps
-        </p>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <p style={{ fontSize: 15, fontWeight: 500 }}>Symptomps</p>
       </MenuItem>
-      <MenuItem>
-        <p style={{ fontSize: 15, color: colors.rd, fontWeight: 500 }}>
-          Prevention
-        </p>
+      <MenuItem onClick={handleMobileMenuClose}>
+        <p style={{ fontSize: 15, fontWeight: 500 }}>Prevention</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleMobileMenuClose}>
         <p>Contact</p>
       </MenuItem>
     </Menu>
@@ -101,9 +93,16 @@ function StartC() {
         }}>
         <Toolbar>
           {/* logo */}
-          <img src={logo} alt="logo" className={classes.logo} />
+          <img
+            src={logo}
+            alt="logo"
+            style={{
+              height: 50,
+              objectFit: "contain",
+            }}
+          />
           <div className={classes.grow} />
-          {/* desktop */}
+          {/* desktop toolbar*/}
           <div className={classes.sectionDesktop}>
             <Button>
               <p style={{ fontSize: 12, color: colors.rd, fontWeight: 500 }}>
@@ -131,20 +130,15 @@ function StartC() {
               </p>
             </Button>
           </div>
+          {/* modile toolbar */}
           <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit">
-              <MoreIcon />
+            <IconButton aria-haspopup="true" onClick={handleMobileMenuOpen}>
+              <MoreIcon style={{ color: colors.rd }} />
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-
       {/* big pic */}
       <Paper
         style={{
@@ -157,7 +151,7 @@ function StartC() {
           position: "relative",
         }}
         elevation={0}>
-        {/* left */}
+        {/* text in the overBigPic */}
         <div
           style={{
             display: "flex",
@@ -166,6 +160,7 @@ function StartC() {
             justifyContent: "center",
             position: "relative",
             height: "100%",
+            zIndex: 10,
           }}>
           <p style={{ fontSize: 25, color: colors.rd, fontWeight: 500 }}>
             COVID-19 Alert
@@ -196,18 +191,8 @@ function StartC() {
             Let Us Help
           </Button>
         </div>
-        {/* right */}
-        <img
-          src={p1}
-          style={{
-            height: "100%",
-            objectFit: "contain",
-            position: "absolute",
-            right: 0,
-            top: 0,
-          }}
-          alt="p1"
-        />
+        {/* overBigPic image */}
+        <img src={bigPicture} className={classes.bigPic} alt="BigPic" />
       </Paper>
     </div>
   );
